@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clinic Visit Forms</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/survey-core@1.9.92/survey.core.min.js"></script>
+  <script src="https://unpkg.com/survey-jquery@1.9.92/survey.jquery.min.js"></script>
+  <link href="https://unpkg.com/survey-core@1.9.92/defaultV2.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #surveyContainer {
+      max-width: 700px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="surveyContainer"></div>
+  <script>
+    const surveyJson = {
+      title: "Clinic Visit Forms",
+      showQuestionNumbers: "off",
+      showProgressBar: "top",
+      pages: [
+        {
+          name: "new_patient",
+          title: "New Patient",
+          elements: [
+            { type: "comment", name: "np_chief_complaint", title: "Chief Complaint" },
+            { type: "comment", name: "np_present_illness", title: "History of Present Illness" },
+            { type: "comment", name: "np_medical_history", title: "Medical History" },
+            { type: "comment", name: "surgical_history", title: "Surgical History" },
+            { type: "comment", name: "np_medications_supplements", title: "Medications and Supplements" },
+            { type: "comment", name: "np_allergies", title: "Allergies" },
+            { type: "comment", name: "np_family_history", title: "Family History" },
+            { type: "comment", name: "np_social_history", title: "Social History" },
+            { type: "comment", name: "immunizations", title: "Immunizations" },
+            { type: "comment", name: "np_review_of_systems", title: "Review of Systems" },
+            { type: "comment", name: "np_vital_signs", title: "Vital Signs" },
+            { type: "comment", name: "np_physical_exam", title: "Physical Examination" },
+            { type: "comment", name: "np_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results" },
+            { type: "comment", name: "np_assessment_plan", title: "Problem Based Assessment and Plan" }
+          ]
+        },
+        {
+          name: "returning_patient",
+          title: "Returning Patient",
+          elements: [
+            { type: "comment", name: "rb_chief_complaint", title: "Chief Complaint" },
+            { type: "comment", name: "rb_present_illness", title: "History of Present Illness" },
+            { type: "comment", name: "rb_medications_supplements", title: "Medications and Supplements" },
+            { type: "comment", name: "rb_mental_status_exam", title: "Mental Status Examination" },
+            { type: "comment", name: "rb_vital_signs", title: "Vital Signs" },
+            { type: "comment", name: "rb_rating_scales", title: "Rating Scales" },
+            { type: "comment", name: "rb_assessment_plan", title: "Problem-Based Assessment and Plan" }
+          ]
+        },
+        {
+          name: "new_patient_visit",
+          title: "New Patient Visit",
+          elements: [
+            { type: "comment", name: "npv_chief_complaint", title: "Chief Complaint" },
+            { type: "comment", name: "npv_present_illness", title: "History of Present Illness" },
+            { type: "comment", name: "npv_medical_history", title: "Medical History" },
+            { type: "comment", name: "npv_surgical_history", title: "Surgical History" },
+            { type: "comment", name: "npv_medications_supplements", title: "Medications and Supplements" },
+            { type: "comment", name: "npv_allergies", title: "Allergies" },
+            { type: "comment", name: "npv_family_history", title: "Family History" },
+            { type: "comment", name: "npv_social_history", title: "Social History" },
+            { type: "comment", name: "npv_immunizations", title: "Immunizations" },
+            { type: "comment", name: "npv_review_of_systems", title: "Review of Systems" },
+            { type: "comment", name: "npv_vital_signs", title: "Vital Signs" },
+            { type: "comment", name: "npv_physical_exam", title: "Physical Examination" },
+            { type: "comment", name: "npv_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results" },
+            { type: "comment", name: "npv_assessment_plan", title: "Problem Based Assessment and Plan" }
+          ]
+        },
+        {
+          name: "follow_up_visit",
+          title: "Follow-Up Visit",
+          elements: [
+            { type: "comment", name: "fuv_chief_complaint", title: "Chief Complaint" },
+            { type: "comment", name: "fuv_present_illness", title: "History of Present Illness" },
+            { type: "comment", name: "fuv_medications_supplements", title: "Medications and Supplements" },
+            { type: "comment", name: "fuv_review_of_systems", title: "Review of Systems" },
+            { type: "comment", name: "fuv_vital_signs", title: "Vital Signs" },
+            { type: "comment", name: "fuv_physical_exam", title: "Physical Examination" },
+            { type: "comment", name: "fuv_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results" },
+            { type: "comment", name: "fuv_assessment_plan", title: "Problem Based Assessment and Plan" }
+          ]
+        },
+        {
+          name: "psychotherapy_session",
+          title: "Psychotherapy Session",
+          elements: [
+            { type: "comment", name: "psychotherapy_subjective", title: "Psychotherapy Subjective" },
+            { type: "comment", name: "psych_medications_supplements", title: "Medications and Supplements" },
+            { type: "comment", name: "psych_mental_status_exam", title: "Mental Status Examination" },
+            { type: "comment", name: "psych_vital_signs", title: "Vital Signs" },
+            { type: "comment", name: "psych_rating_scales", title: "Rating Scales" },
+            { type: "comment", name: "psych_assessment_plan", title: "Problem-Based Assessment and Plan" }
+          ]
+        },
+        {
+          name: "return_behavioral_health_visit",
+          title: "Return Behavioral Health Visit",
+          elements: [
+            { type: "comment", name: "rb_chief_complaint2", title: "Chief Complaint" },
+            { type: "comment", name: "rb_present_illness2", title: "History of Present Illness" },
+            { type: "comment", name: "rb_medications_supplements2", title: "Medications and Supplements" },
+            { type: "comment", name: "rb_mental_status_exam2", title: "Mental Status Examination" },
+            { type: "comment", name: "rb_vital_signs2", title: "Vital Signs" },
+            { type: "comment", name: "rb_rating_scales2", title: "Rating Scales" },
+            { type: "comment", name: "rb_assessment_plan2", title: "Problem-Based Assessment and Plan" }
+          ]
+        },
+        {
+          name: "new_behavioral_health_visit",
+          title: "New Behavioral Health Visit",
+          elements: [
+            { type: "comment", name: "nbh_chief_complaint", title: "Chief Complaint" },
+            { type: "comment", name: "nbh_present_illness", title: "History of Present Illness" },
+            { type: "comment", name: "nbh_social_history", title: "Social History" },
+            { type: "comment", name: "nbh_medical_history", title: "Medical History" },
+            { type: "comment", name: "nbh_medications_supplements", title: "Medications and Supplements" },
+            { type: "comment", name: "nbh_allergies", title: "Allergies" },
+            { type: "comment", name: "nbh_family_history", title: "Family History" },
+            { type: "comment", name: "nbh_mental_status_exam", title: "Mental Status Examination" },
+            { type: "comment", name: "nbh_vital_signs", title: "Vital Signs" },
+            { type: "comment", name: "nbh_rating_scales", title: "Rating Scales" },
+            { type: "comment", name: "nbh_assessment_plan", title: "Problem-Based Assessment and Plan" }
+          ]
+        }
+      ]
+    };
+
+    const survey = new Survey.Model(surveyJson);
+    survey.onComplete.add(function (sender) {
+      console.log("Survey results:", sender.data);
+    });
+    $("#surveyContainer").Survey({ model: survey });
+  </script>
+</body>
+</html>
