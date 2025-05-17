@@ -39,9 +39,25 @@
             { type: "comment", name: "np_social_history", title: "Social History" },
             { type: "comment", name: "immunizations", title: "Immunizations" },
             { type: "comment", name: "np_review_of_systems", title: "Review of Systems" },
-            { type: "comment", name: "np_vital_signs", title: "Vital Signs" },
-            { type: "comment", name: "np_physical_exam", title: "Physical Examination" },
-            { type: "comment", name: "np_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results" },
+            { type: "checkbox", name: "np_vital_signs", title: "Vital Signs", choices: [
+              { value: "bp", text: "Blood Pressure" },
+              { value: "pulse", text: "Pulse" },
+              { value: "rr", text: "Respiration Rate" },
+              { value: "temp", text: "Temperature" }
+            ], hasOther: true },
+            { type: "checkbox", name: "np_physical_exam", title: "Physical Examination", choices: [
+              { value: "ga", text: "General Appearance" },
+              { value: "heent", text: "HEENT" },
+              { value: "cv", text: "Cardiovascular" },
+              { value: "resp", text: "Respiratory" },
+              { value: "abd", text: "Abdomen" }
+            ], hasOther: true },
+            { type: "checkbox", name: "np_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results", choices: [
+              { value: "cbc", text: "CBC" },
+              { value: "xray", text: "X-Ray" },
+              { value: "mri", text: "MRI" },
+              { value: "chem", text: "Blood Chemistry" }
+            ], hasOther: true },
             { type: "comment", name: "np_assessment_plan", title: "Problem Based Assessment and Plan" }
           ]
         },
@@ -52,9 +68,22 @@
             { type: "comment", name: "rb_chief_complaint", title: "Chief Complaint" },
             { type: "comment", name: "rb_present_illness", title: "History of Present Illness" },
             { type: "comment", name: "rb_medications_supplements", title: "Medications and Supplements" },
-            { type: "comment", name: "rb_mental_status_exam", title: "Mental Status Examination" },
-            { type: "comment", name: "rb_vital_signs", title: "Vital Signs" },
-            { type: "comment", name: "rb_rating_scales", title: "Rating Scales" },
+            { type: "checkbox", name: "rb_mental_status_exam", title: "Mental Status Examination", choices: [
+              { value: "alert", text: "Alertness" },
+              { value: "mood", text: "Mood" },
+              { value: "thought", text: "Thought Process" },
+              { value: "judgment", text: "Judgment" }
+            ], hasOther: true },
+            { type: "checkbox", name: "rb_vital_signs", title: "Vital Signs", choices: [
+              { value: "hr", text: "Heart Rate" },
+              { value: "bp", text: "Blood Pressure" },
+              { value: "o2", text: "Oxygen Saturation" }
+            ], hasOther: true },
+            { type: "checkbox", name: "rb_rating_scales", title: "Rating Scales", choices: [
+              { value: "phq9", text: "PHQ-9" },
+              { value: "gad7", text: "GAD-7" },
+              { value: "mmse", text: "MMSE" }
+            ], hasOther: true },
             { type: "comment", name: "rb_assessment_plan", title: "Problem-Based Assessment and Plan" }
           ]
         },
@@ -72,12 +101,27 @@
             { type: "comment", name: "npv_social_history", title: "Social History" },
             { type: "comment", name: "npv_immunizations", title: "Immunizations" },
             { type: "comment", name: "npv_review_of_systems", title: "Review of Systems" },
-            { type: "comment", name: "npv_vital_signs", title: "Vital Signs" },
-            { type: "comment", name: "npv_physical_exam", title: "Physical Examination" },
-            { type: "comment", name: "npv_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results" },
+            { type: "checkbox", name: "npv_vital_signs", title: "Vital Signs", choices: [
+              { value: "temp", text: "Temperature" },
+              { value: "rr", text: "Respiratory Rate" },
+              { value: "hr", text: "Heart Rate" },
+              { value: "bp", text: "Blood Pressure" }
+            ], hasOther: true },
+            { type: "checkbox", name: "npv_physical_exam", title: "Physical Examination", choices: [
+              { value: "skin", text: "Skin" },
+              { value: "lymph", text: "Lymph Nodes" },
+              { value: "abd", text: "Abdomen" },
+              { value: "neuro", text: "Neurological" }
+            ], hasOther: true },
+            { type: "checkbox", name: "npv_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results", choices: [
+              { value: "ua", text: "Urinalysis" },
+              { value: "cxr", text: "Chest X-ray" },
+              { value: "ct", text: "CT Scan" }
+            ], hasOther: true },
             { type: "comment", name: "npv_assessment_plan", title: "Problem Based Assessment and Plan" }
           ]
-        },
+        }
+      ,
         {
           name: "follow_up_visit",
           title: "Follow-Up Visit",
@@ -86,9 +130,23 @@
             { type: "comment", name: "fuv_present_illness", title: "History of Present Illness" },
             { type: "comment", name: "fuv_medications_supplements", title: "Medications and Supplements" },
             { type: "comment", name: "fuv_review_of_systems", title: "Review of Systems" },
-            { type: "comment", name: "fuv_vital_signs", title: "Vital Signs" },
-            { type: "comment", name: "fuv_physical_exam", title: "Physical Examination" },
-            { type: "comment", name: "fuv_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results" },
+            { type: "checkbox", name: "fuv_vital_signs", title: "Vital Signs", choices: [
+              { value: "bp", text: "Blood Pressure" },
+              { value: "hr", text: "Heart Rate" },
+              { value: "rr", text: "Respiratory Rate" },
+              { value: "temp", text: "Temperature" }
+            ], hasOther: true },
+            { type: "checkbox", name: "fuv_physical_exam", title: "Physical Examination", choices: [
+              { value: "heent", text: "HEENT" },
+              { value: "cv", text: "Cardiovascular" },
+              { value: "resp", text: "Respiratory" },
+              { value: "abd", text: "Abdomen" }
+            ], hasOther: true },
+            { type: "checkbox", name: "fuv_lab_imaging", title: "Laboratory, Imaging, and Diagnostic Test Results", choices: [
+              { value: "cbc", text: "CBC" },
+              { value: "xray", text: "X-Ray" },
+              { value: "mri", text: "MRI" }
+            ], hasOther: true },
             { type: "comment", name: "fuv_assessment_plan", title: "Problem Based Assessment and Plan" }
           ]
         },
@@ -98,23 +156,22 @@
           elements: [
             { type: "comment", name: "psychotherapy_subjective", title: "Psychotherapy Subjective" },
             { type: "comment", name: "psych_medications_supplements", title: "Medications and Supplements" },
-            { type: "comment", name: "psych_mental_status_exam", title: "Mental Status Examination" },
-            { type: "comment", name: "psych_vital_signs", title: "Vital Signs" },
-            { type: "comment", name: "psych_rating_scales", title: "Rating Scales" },
+            { type: "checkbox", name: "psych_mental_status_exam", title: "Mental Status Examination", choices: [
+              { value: "appearance", text: "Appearance" },
+              { value: "mood", text: "Mood" },
+              { value: "thought", text: "Thought Process" },
+              { value: "insight", text: "Insight & Judgment" }
+            ], hasOther: true },
+            { type: "checkbox", name: "psych_vital_signs", title: "Vital Signs", choices: [
+              { value: "bp", text: "Blood Pressure" },
+              { value: "hr", text: "Heart Rate" },
+              { value: "temp", text: "Temperature" }
+            ], hasOther: true },
+            { type: "checkbox", name: "psych_rating_scales", title: "Rating Scales", choices: [
+              { value: "phq9", text: "PHQ-9" },
+              { value: "gad7", text: "GAD-7" }
+            ], hasOther: true },
             { type: "comment", name: "psych_assessment_plan", title: "Problem-Based Assessment and Plan" }
-          ]
-        },
-        {
-          name: "return_behavioral_health_visit",
-          title: "Return Behavioral Health Visit",
-          elements: [
-            { type: "comment", name: "rb_chief_complaint2", title: "Chief Complaint" },
-            { type: "comment", name: "rb_present_illness2", title: "History of Present Illness" },
-            { type: "comment", name: "rb_medications_supplements2", title: "Medications and Supplements" },
-            { type: "comment", name: "rb_mental_status_exam2", title: "Mental Status Examination" },
-            { type: "comment", name: "rb_vital_signs2", title: "Vital Signs" },
-            { type: "comment", name: "rb_rating_scales2", title: "Rating Scales" },
-            { type: "comment", name: "rb_assessment_plan2", title: "Problem-Based Assessment and Plan" }
           ]
         },
         {
@@ -128,9 +185,19 @@
             { type: "comment", name: "nbh_medications_supplements", title: "Medications and Supplements" },
             { type: "comment", name: "nbh_allergies", title: "Allergies" },
             { type: "comment", name: "nbh_family_history", title: "Family History" },
-            { type: "comment", name: "nbh_mental_status_exam", title: "Mental Status Examination" },
-            { type: "comment", name: "nbh_vital_signs", title: "Vital Signs" },
-            { type: "comment", name: "nbh_rating_scales", title: "Rating Scales" },
+            { type: "checkbox", name: "nbh_mental_status_exam", title: "Mental Status Examination", choices: [
+              { value: "orientation", text: "Orientation" },
+              { value: "mood", text: "Mood" },
+              { value: "cognition", text: "Cognition" }
+            ], hasOther: true },
+            { type: "checkbox", name: "nbh_vital_signs", title: "Vital Signs", choices: [
+              { value: "bp", text: "Blood Pressure" },
+              { value: "hr", text: "Heart Rate" }
+            ], hasOther: true },
+            { type: "checkbox", name: "nbh_rating_scales", title: "Rating Scales", choices: [
+              { value: "phq9", text: "PHQ-9" },
+              { value: "gad7", text: "GAD-7" }
+            ], hasOther: true },
             { type: "comment", name: "nbh_assessment_plan", title: "Problem-Based Assessment and Plan" }
           ]
         }
